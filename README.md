@@ -21,6 +21,18 @@ PS> @('2', '1', '11') | Sort-Object
 1
 11
 2
+
+PS> # Not good
+PS> $t = (ls .\Scripts*.txt).name
+PS> $t | Sort-Object
+Scripts1.txt
+Scripts10.txt
+Scripts2.txt
+PS> # Good
+PS> Sort-Naturally -strArray $t
+Scripts1.txt
+Scripts2.txt
+Scripts10.txt
 ```
 
 ### The script is simple enough while probably not tidy.
