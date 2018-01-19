@@ -1,13 +1,13 @@
 
-# Sort?
-## You may notice "sort" in Windows explorer and other programs are different. Why?
-## Windows explorer is using `natural sort` which in many cases like "humans"
+## Sort?
+### You may notice "sort" in Windows explorer and other programs are different. Why?
+### Windows explorer is using `natural sort` which in many cases like "humans"
 
-# Natural sort?
-## Windows explorer is using a legacy API in `shlwapi.dll` called `StrCmpLogicalW`
+## Natural sort?
+### Windows explorer is using a legacy API in `shlwapi.dll` called `StrCmpLogicalW`
 
-# I want use `Naturall sort` in my powershell script.
-## Not that easy and not tidy, but, achievable.
+## I want use `Naturall sort` in my powershell script.
+### Not that easy and not tidy, but, achievable.
 
 '''
 PS> # Natural sort
@@ -23,6 +23,6 @@ PS> @('2', '1', '11') | Sort-Object
 2
 '''
 
-## The script is simple enough while probably not tidy.
+### The script is simple enough while probably not tidy.
 
 - Larry.Song@outlook.com
