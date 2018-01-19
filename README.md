@@ -9,7 +9,7 @@ Windows explorer is using a legacy API in `shlwapi.dll` called `StrCmpLogicalW` 
 ## I want use `Naturall sort` in my powershell script.
 Not that easy and not tidy, but, achievable.
 
-'''
+```
 PS> # Natural sort
 PS> . .\NaturalSort.ps1
 PS> Sort-Naturally -strArray @('2', '1', '11')
@@ -21,7 +21,7 @@ PS> @('2', '1', '11') | Sort-Object
 1
 11
 2
-'''
+```
 
 ### The script is simple enough while probably not tidy.
 
