@@ -40,4 +40,6 @@ Scripts10.txt
 
 ### The script is simple enough while probably not tidy.
 
+### I am devops instead of a professional C# developer, pull request is appreciated
+
 - Larry.Song@outlook.com

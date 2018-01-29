@@ -2,7 +2,8 @@
 function Sort-Naturally
 {
     PARAM(
-        [string[]]$strArray
+        [string[]]$strArray,
+        [switch]$Descending
     )
 
     Add-Type -TypeDefinition @'
@@ -33,6 +34,11 @@ namespace NaturalSort {
     }
 }
 '@
+
+    if($Descending)
+    {
+        [array]::Reverse($strArray)
+    }
 
     return [NaturalSort.NaturalSort]::Sort($strArray)
 }
