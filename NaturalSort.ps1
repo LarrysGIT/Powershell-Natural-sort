@@ -35,10 +35,11 @@ namespace NaturalSort {
 }
 '@
 
+    $strArray_ = [NaturalSort.NaturalSort]::Sort($strArray)
     if($Descending)
     {
-        [array]::Reverse($strArray)
+        [array]::Reverse($strArray_)
     }
 
-    return [NaturalSort.NaturalSort]::Sort($strArray)
+    return $strArray_
 }
