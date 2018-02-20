@@ -34,12 +34,5 @@ namespace NaturalSort {
     }
 }
 '@
-
-    $strArray_ = [NaturalSort.NaturalSort]::Sort($strArray)
-    if($Descending)
-    {
-        [array]::Reverse($strArray_)
-    }
-
-    return $strArray_
+    return [NaturalSort.NaturalSort]::Sort($strArray)
 }
