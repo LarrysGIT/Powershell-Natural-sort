@@ -2,7 +2,7 @@
 function Sort-Naturally
 {
     PARAM(
-        [string[]]$strArray,
+        [System.Collections.ArrayList]$Array,
         [switch]$Descending
     )
 
@@ -34,5 +34,10 @@ namespace NaturalSort {
     }
 }
 '@
-    return [NaturalSort.NaturalSort]::Sort($strArray)
+    $Array.Sort((New-Object NaturalSort.NaturalStringComparer))
+    if($Descending)
+    {
+        $Array.Reverse()
+    }
+    return $Array
 }
