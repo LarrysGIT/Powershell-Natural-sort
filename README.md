@@ -1,16 +1,17 @@
 
 ## Sort?
-You may notice "sort" in Windows explorer and other programs are different. Why?
 
-Because Windows explorer is using `natural sort`, which in many cases more like a `human`.
+You may notice "sort" in Windows explorer is different from other programs.
+
+Windows explorer is using `natural sort`, which in many cases more like a `human`.
 
 ## Natural sort?
 
-Windows explorer is using a legacy API in `shlwapi.dll` called `StrCmpLogicalW` when sort strings, aka, `Natural sort`
+Windows explorer uses a legacy API in `shlwapi.dll` named `StrCmpLogicalW` on sorting strings.
 
 ## I want use `Natural sort` in my powershell script.
 
-Not tidy, but achievable.
+Achievable.
 
 ```powershell
 PS> # Natural sort
@@ -39,6 +40,3 @@ PS> Sort-Naturally -Array $t
 10.txt
 ```
 
-### The script is simple enough while probably not tidy.
-
-### I am devops instead of a professional C# developer, pull request is appreciated
