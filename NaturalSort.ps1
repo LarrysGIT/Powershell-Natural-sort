@@ -4,6 +4,7 @@ function Sort-Naturally
     PARAM(
         [Parameter(ValueFromPipeline=$true)]
         [System.Collections.ArrayList]$Array,
+        [String]$Property,
         [switch]$Descending
     )
 
@@ -35,7 +36,26 @@ namespace NaturalSort {
     }
 }
 '@
-    $Array.Sort((New-Object NaturalSort.NaturalStringComparer))
+    if($Property)
+    {
+        $ArrayTmp = @{}
+        foreach($obj in $Array)
+        {
+            $ArrayTmp.Add(("{0}_{1}" -f $obj.$Property, $obj.GetHashCode()), $obj)
+        }
+        $Keys = New-Object System.Collections.ArrayList
+        $Keys.AddRange(@($ArrayTmp.Keys))
+        $Keys.Sort((New-Object NaturalSort.NaturalStringComparer))
+        $Array.Clear()
+        foreach($k in $Keys)
+        {
+            $Array.Add($ArrayTmp[$k]) | Out-Null
+        }
+    }
+    else
+    {
+        $Array.Sort((New-Object NaturalSort.NaturalStringComparer))
+    }
     if($Descending)
     {
         $Array.Reverse()
