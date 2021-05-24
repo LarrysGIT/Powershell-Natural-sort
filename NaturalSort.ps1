@@ -2,6 +2,7 @@
 function Sort-Naturally
 {
     PARAM(
+        [Parameter(ValueFromPipeline=$true)]
         [System.Collections.ArrayList]$Array,
         [switch]$Descending
     )
