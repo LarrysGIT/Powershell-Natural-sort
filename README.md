@@ -34,6 +34,7 @@ PS> @('2', '1', '11') | Sort-Object
 ```
 
 ### Sort object array
+```powershell
 PS>
 PS> # Not good
 PS> $t = ls .\testfiles\*.txt
@@ -51,8 +52,10 @@ PS> ,$t | Sort-Naturally
 1.txt
 2.txt
 10.txt
+```
 
 ### Sort object array by member property
+```powershell
 PS> 
 PS> # Sort by a selected property
 PS> $t = @()
