@@ -11,8 +11,9 @@ Windows explorer uses a legacy API in `shlwapi.dll` named `StrCmpLogicalW` on so
 
 ## I want use `Natural sort` in my powershell script.
 
+### Sort string array
 ```powershell
-PS> # Natural sort, load the function
+PS> # Load the function
 PS> . .\NaturalSort.ps1
 PS>
 PS> # Typical use
@@ -30,6 +31,9 @@ PS> @('2', '1', '11') | Sort-Object
 1
 11
 2
+```
+
+### Sort object array
 PS>
 PS> # Not good
 PS> $t = ls .\testfiles\*.txt
@@ -47,10 +51,10 @@ PS> ,$t | Sort-Naturally
 1.txt
 2.txt
 10.txt
+
+### Sort object array by member property
 PS> 
-PS> 
-PS> 
-PS> # More examples, sort by a selected property, just make sure the member.$Property.ToString() is the wanted string to sort
+PS> # Sort by a selected property
 PS> $t = @()
 PS> $t += New-Object PSObject -Property @{Name = "1"; ID = "2"}
 PS> $t += New-Object PSObject -Property @{Name = "10"; ID = "1"}
